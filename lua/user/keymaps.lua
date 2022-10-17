@@ -35,6 +35,11 @@ keymap("i", "jk", "<ESC>", opts)
 
 -- Help {{{
 -- Help commands
+-- Get help for word under the cursor - <S-F1>
+keymap("n", "<S-F1>", ":h <C-r><C-w><CR>", opts)
+keymap("v", "<S-F1>", ":h <C-r><C-w><CR>", opts)
+keymap("x", "<S-F1>", ":h <C-r><C-w><CR>", opts)
+keymap("i", "<S-F1>", "<ESC>:h <C-r><C-w><CR>", opts)
 
 -- }}}
 
@@ -95,6 +100,9 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- Close Window - <leader>q
 keymap("n", "<leader>q", "<C-w>c", opts)
 keymap("v", "<leader>q", "<C-w>c", opts)
+-- Close All Help Windows - <leader>qh
+keymap("n", "<leader>qh", ":silent HelpAllClose<CR>", opts)
+keymap("v", "<leader>qh", ":silent HelpAllClose<CR>", opts)
 
 -- Close Window and Delete Buffer - <leader>x
 keymap("n", "<leader>x", ":bdelete<CR>", opts_nosilent)
