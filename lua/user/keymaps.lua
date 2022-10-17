@@ -45,6 +45,10 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("n", "<leader>w", ":w<CR>", opts_nosilent)
 -- Save All - <leader>wa
 keymap("n", "<leader>wa", ":wa<CR>", opts_nosilent)
+-- Fuzzy Open File
+keymap("n", "<S-F3>", ":e ", opts_nosilent)
+keymap("v", "<S-F3>", ":e ", opts_nosilent)
+keymap("i", "<S-F3>", "<ESC>:e ", opts_nosilent)
 
 
 
@@ -64,8 +68,8 @@ keymap("v", "p", '"_dP', opts)
 -- Move selected text up and down - Alt-[Up|Down]
 keymap("v", "<A-j>", ":m .+1<CR>==", opts)
 keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "<A-Up>", ":m .+1<CR>==", opts)
-keymap("v", "<A-Down>", ":m .-2<CR>==", opts)
+keymap("v", "<A-Down>", ":m .+1<CR>==", opts)
+keymap("v", "<A-Up>", ":m .-2<CR>==", opts)
 
 -- Visual Block --
 -- Move text up and down - Alt-[Up|Down]
@@ -73,8 +77,8 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-Up>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-Down>", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "<A-Down>", ":move '>+1<CR>gv-gv", opts)
+keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 
 
 -- }}}
@@ -91,6 +95,9 @@ keymap("x", "<A-Down>", ":move '<-2<CR>gv-gv", opts)
 -- Close Window - <leader>q
 keymap("n", "<leader>q", "<C-w>c", opts)
 keymap("v", "<leader>q", "<C-w>c", opts)
+-- Close All Help Windows - <leader>qh
+keymap("n", "<leader>qh", ":silent HelpAllClose", opts)
+keymap("v", "<leader>qh", ":silent HelpAllClose", opts)
 
 -- Close Window and Delete Buffer - <leader>x
 keymap("n", "<leader>x", ":bdelete<CR>", opts_nosilent)
@@ -120,8 +127,8 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Explorer - F8, <leader>e
-keymap("n", "<F8>", ":Lex 30<cr>", opts)
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<F8>", ":Lex 10<cr>", opts)
+keymap("n", "<leader>e", ":Lex 10<cr>", opts)
 -- In Explorer - -
 keymap("n", "-", ":Explore<CR>", opts)
 
@@ -141,17 +148,20 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<[b>", ":bnext<CR>", opts)
 keymap("n", "<]b>", ":bprevious<CR>", opts)
 
--- Previous window
+-- Switch to Previous window
 keymap("n", "<leader>p", "<C-w>p", opts)
--- Previous buffer
+-- Switch to Previous buffer - Ctrl-F3, <leader>TAB
 keymap("n", "<C-F3>", ":e #<CR>", opts)
 keymap("v", "<C-F3>", ":e #<CR>", opts)
 keymap("i", "<C-F3>", "<ESC>:e #<CR>", opts)
+keymap("n", "<leader><TAB>", ":e #<CR>", opts)
+keymap("v", "<leader><TAB>", ":e #<CR>", opts)
 
 -- Navigate Buffers - F3, <leader>b
-keymap("n", "<F3>", ":buffer ", opts_nosilent)
-keymap("v", "<F3>", ":buffer ", opts_nosilent)
-keymap("i", "<F3>", "<ESC>:buffer ", opts_nosilent)
+-- keymap("n", "<F3>", ":buffer ", opts_nosilent)
+keymap("n", "<F3>", ":files<cr>:b<space>", opts_nosilent)
+keymap("v", "<F3>", ":files<cr>:b<space>", opts_nosilent)
+keymap("i", "<F3>", "<ESC>:files<cr>:b<space>", opts_nosilent)
 
 
 -- }}}
@@ -175,4 +185,4 @@ keymap("i", "<F3>", "<ESC>:buffer ", opts_nosilent)
 
 
 
--- vim: ts=8 ft=lua nowrap fdm=marker 
+-- vim: ts=2 ft=lua nowrap fdm=marker 
