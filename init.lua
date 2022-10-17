@@ -4,7 +4,6 @@ local fn = vim.fn
 
 require "user.options"
 require "user.keymaps"
--- require "user.colorscheme"
 
 -- Load user config overrides if available
 -- User config override will be in $HOME/myinit.lua in UNIX
@@ -19,5 +18,8 @@ local res, packer = pcall(require, "myinit")
 if res then
   -- TODO: This is missing getting the path to the loaded myinit.lua script and
   -- print it.
-  vim.cmd "echomsg \"Found user config overrides\""
+  vim.cmd "echomsg \"Loaded user config overrides\""
 end
+
+-- End with TDVim version
+vim.notify("TDVim " .. env.TDVIMVERSION .. " loaded")
