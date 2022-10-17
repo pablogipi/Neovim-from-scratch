@@ -180,20 +180,6 @@ end
 
 
 -- Interface settings {{{
---
--- Encoding {{{2
--- UTF-8 encoding has been disabled due to several compatibility problems
--- Spacially with terminals.
-if vim.fn.has("multi_byte") then
-    if vim.o.termencoding == "" then
-        set.termencoding = &encoding
-    end
-    set.encoding="utf-8"
-    --setglobal fileencoding=utf-8 bomb
-    vim.g.fileencoding='utf-8'
-    set.fileencodings='ucs-bom,utf-8,latin1'
-end
---}}}
 
 -- In many terminal emulators the mouse works just fine, thus enable it.
 set.mouse="a"
@@ -210,7 +196,7 @@ set.previewheight=8
 --Default folding method id indent
 set.foldmethod="indent"
 --Folds margin width
-set.foldcolumn=2
+set.foldcolumn="auto:5"
 -- Minimum lines in a  fold to consider it a a proper fold
 set.foldminlines=3
 -- Fold starting level, set to 1 to have only level 1 folds ready
@@ -224,9 +210,9 @@ set.foldnestmax = 3
 
 -- Completion {{{
 -- Completion options
-set.noshowmode=true
+set.showmode=false
 set.shortmess="aTt"
-set.noinfercase=true
+set.infercase=false
 set.belloff:append('ctrlg') -- If Vim beeps during completion
 set.belloff:append('cursor') -- If Vim beeps during scrolling
 set.belloff:append('all') -- If Vim beeps during scrolling
@@ -239,65 +225,65 @@ set.completeopt:append('noinsert')
 -- inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
 -- inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
 
-" Sources for searching in completion mode
-" Only include current buffer and buffer in other windows only
-set complete=.,w,b
+-- Sources for searching in completion mode
+-- Only include current buffer and buffer in other windows only
+set.complete=".,w,b"
 
-" Set window splits to be at bottom by default, used by preview window and
-" quckfix
-set splitbelow
-" }}}
+-- Set window splits to be at bottom by default, used by preview window and
+-- quickfix
+set.splitbelow=true
+-- }}}
 
-" Status Line {{{2
-" Always show status line:
-set laststatus=2
-" Defaul status line
-set statusline=%-f%m%r%h%w%q\ %y\ %=[POS=%l,%v][%p%%]
-" Disable show mode, not needed when using lightline or any other status line
-" plugin
-set noshowmode
-
-
-" }}}
-
-" Preview window {{{2
-set pvh=5
-" }}}
-
-" Invisible character {{{2
-"set listchars=tab:▸\ ,eol:¬
-set listchars=tab:>-,eol:¬,space:.,trail:.
-" }}}
-
-" Lines wraping and formatting {{{2
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-" }}}
+-- Status Line {{{2
+-- Always show status line:
+set.laststatus=2
+-- Defaul status line
+set.statusline="%-f%m%r%h%w%q %y %=[POS=%l,%v][%p%%]"
+-- Disable show mode, not needed when using lightline or any other status line
+-- plugin
+set.showmode=false
 
 
-" FoldDigest {{{2
-if exists("$FOLDDIGEST_POS")
-    let g:FoldDigest_Pos=$FOLDDIGEST_POS
-else
-    let g:FoldDigest_Pos="right"
-endif
+-- }}}
 
-" }}}
+-- Preview window {{{2
+set.pvh=5
+-- }}}
 
-" Netrw {{{2
-let g:netrw_banner        = 0
-let g:netrw_sort_sequence = '[\/]$,*'
-"let g:netrw_browse_split  = 4
-" }}}
+-- Invisible character {{{2
+--set listchars=tab:▸\ ,eol:¬
+set.listchars="tab:>-,eol:¬,space:.,trail:."
+-- }}}
 
-" window title {{{2
-set title
-let &titlestring='TDVim'
-" }}}
+-- Lines wraping and formatting {{{2
+set.wrap=true
+set.textwidth=79
+set.formatoptions="qrn1"
+-- }}}
 
-"""""""""""""""""""""""""""
-""""""""""""""""""""""""""" }}}
+
+-- FoldDigest {{{2
+--if exists("$FOLDDIGEST_POS")
+    --let g:FoldDigest_Pos=$FOLDDIGEST_POS
+--else
+    --let g:FoldDigest_Pos="right"
+--endif
+
+-- }}}
+
+-- Netrw {{{2
+--let g:netrw_banner        = 0
+--let g:netrw_sort_sequence = '[\/]$,*'
+--let g:netrw_browse_split  = 4
+-- }}}
+
+-- window title {{{2
+set.title=true
+set.titlestring='TDVim'
+-- }}}
+
+---------------------------
+--------------------------- }}}
 
 
 -- TDVim version
