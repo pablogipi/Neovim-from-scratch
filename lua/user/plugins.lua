@@ -52,6 +52,9 @@ return packer.startup(function(use)
   use 'tpope/vim-unimpaired'
   use 'vim-scripts/HelpClose'
 
+  -- Colorschemes
+  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "lunarvim/darkplus.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
