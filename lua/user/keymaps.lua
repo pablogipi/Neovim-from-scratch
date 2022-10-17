@@ -95,9 +95,6 @@ keymap("x", "<A-Up>", ":move '<-2<CR>gv-gv", opts)
 -- Close Window - <leader>q
 keymap("n", "<leader>q", "<C-w>c", opts)
 keymap("v", "<leader>q", "<C-w>c", opts)
--- Close All Help Windows - <leader>qh
-keymap("n", "<leader>qh", ":silent HelpAllClose", opts)
-keymap("v", "<leader>qh", ":silent HelpAllClose", opts)
 
 -- Close Window and Delete Buffer - <leader>x
 keymap("n", "<leader>x", ":bdelete<CR>", opts_nosilent)
