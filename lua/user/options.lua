@@ -182,7 +182,7 @@ end
 set.mouse="a"
 
 -- Color Theme
--- Leave this for the user settings, use desert as We will, as always, revise in class. Please also use the homework sheets from week 1 to 5, any assigned videos on active learn, and resources in Autumn 1 on MyAgora in the year 4 maths section. I am attaching “what is on the test” which is also on MyAgora.default
+-- Leave this for the user settings, use desert as default
 vim.cmd "colorscheme desert"
 
 -- Command line height
