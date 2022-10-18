@@ -177,7 +177,11 @@ keymap("i", "<F3>", "<ESC>:files<cr>:b<space>", opts_nosilent)
 -- }}}
 
 -- Development {{{
--- Operations usaully used when programing
+-- Operations usually used when programing
+
+-- Autocomplete using Previous and Next
+keymap("i", "<tab>", "<c-r>=utils#TabAutocompleteWrapper(\"backward\")<cr>", opts)
+keymap("i", "<s-tab>", "<c-r>=utils#TabAutocompleteWrapper(\"forward\")<cr>", opts)
 
 -- }}}
 

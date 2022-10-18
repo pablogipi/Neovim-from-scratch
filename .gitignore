@@ -2,6 +2,7 @@
 *~
 *.swp
 tags
+Session.vim
 plugin/packer_compiled.lua
 
 # Compiled Lua sources

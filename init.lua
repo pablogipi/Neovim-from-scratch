@@ -4,6 +4,7 @@ local fn = vim.fn
 
 require "user.options"
 require "user.keymaps"
+require "user.cmp"
 
 -- Load user config overrides if available
 -- User config override will be in $HOME/myinit.lua in UNIX
