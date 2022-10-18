@@ -3,6 +3,7 @@
 *.swp
 tags
 plugin/packer_compiled.lua
+Session.vim
 
 # Compiled Lua sources
 luac.out
