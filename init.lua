@@ -7,6 +7,8 @@ require "user.keymaps"
 require "user.plugins"
 --require "user.colorscheme"
 require "user.cmp"
+require "user.lsp"
+
 
 -- Load user config overrides if available
 -- User config override will be in $HOME/myinit.lua in UNIX
