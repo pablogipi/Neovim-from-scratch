@@ -3,7 +3,8 @@ if not status_ok then
   return
 end
 
-telescope.load_extension('media_files')
+-- Not use media file extension at the moment
+-- telescope.load_extension('media_files')
 
 local actions = require "telescope.actions"
 
@@ -18,6 +19,8 @@ telescope.setup {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
         ["<C-p>"] = actions.cycle_history_prev,
+        ["<C-PageDown>"] = actions.cycle_history_next,
+        ["<C-PageUp>"] = actions.cycle_history_prev,
 
         ["<C-j>"] = actions.move_selection_next,
         ["<C-k>"] = actions.move_selection_previous,
