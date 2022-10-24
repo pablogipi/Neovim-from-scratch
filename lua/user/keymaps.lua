@@ -26,7 +26,7 @@ vim.g.maplocalleader = " "
 -- Command Line Mode - F2
 keymap("n", "<F2>", ":", opts_nosilent)
 keymap("v", "<F2>", ":", opts_nosilent)
-keymap("i", "<F2>", "<ESC>:", opts_nosilent)
+keymap("i", "<F2>", "<c-o>:", opts_nosilent)
 
 -- Press jk fast exit Insert and enter Normal mode
 keymap("i", "jk", "<ESC>", opts)
@@ -43,7 +43,7 @@ keymap("i", "jk", "<ESC>", opts)
 keymap("n", "<S-F1>", "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<S-F1>", "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("x", "<S-F1>", "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("i", "<S-F1>", "<ESC><cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("i", "<S-F1>", "<c-o><cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 
 -- }}}
 
@@ -59,19 +59,19 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require
 keymap("v", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<S-F3>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<S-F3>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("i", "<S-F3>", "<ESC><cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("i", "<S-F3>", "<c-o><cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<C-P>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<C-P>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("i", "<C-P>", "<ESC><cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("i", "<C-P>", "<c-o><cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 -- Fuzzy Open Old File - C-S-F3, <leader>fo, C-Alt-P
 keymap("n", "<leader>fo", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<leader>fo", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<C-S-F3>", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<C-S-F3>", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("i", "<C-S-F3>", "<ESC><cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("i", "<C-S-F3>", "<c-o><cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<A-C-P>", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<A-C-P>", "<cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("i", "<A-C-P>", "<ESC><cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("i", "<A-C-P>", "<c-o><cmd>lua require'telescope.builtin'.oldfiles(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 
 
 
@@ -179,7 +179,7 @@ keymap("n", "<leader>p", "<C-w>p", opts)
 -- Switch to Previous buffer - Ctrl-F3, <leader>TAB
 keymap("n", "<C-F3>", ":e #<CR>", opts)
 keymap("v", "<C-F3>", ":e #<CR>", opts)
-keymap("i", "<C-F3>", "<ESC>:e #<CR>", opts)
+keymap("i", "<C-F3>", "<c-o>:e #<CR>", opts)
 keymap("n", "<leader><TAB>", ":e #<CR>", opts)
 keymap("v", "<leader><TAB>", ":e #<CR>", opts)
 
@@ -187,7 +187,8 @@ keymap("v", "<leader><TAB>", ":e #<CR>", opts)
 -- keymap("n", "<F3>", ":buffer ", opts_nosilent)
 keymap("n", "<F3>", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("v", "<F3>", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("v", "<ESC><F3>", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("x", "<F3>", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("i", "<F3>", "<c-o><cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 
 
 -- }}}
