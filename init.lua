@@ -11,6 +11,7 @@ require "user.cmp"
 require "user.lsp"
 require "user.telescope"
 require "user.treesitter"
+require "user.autopairs"
 
 
 -- Setup cmdheight to support several lines of messages but not force to do
@@ -40,4 +41,3 @@ vim.notify("TDVim " .. env.TDVIMVERSION .. " loaded" .. overridemsg)
 
 -- Restore cmdheight
 opt.cmdheight=cmdheight
-
