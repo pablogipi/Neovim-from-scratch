@@ -12,6 +12,7 @@ require "user.lsp"
 require "user.telescope"
 require "user.treesitter"
 require "user.autopairs"
+require "user.comment"
 
 
 -- Setup cmdheight to support several lines of messages but not force to do
