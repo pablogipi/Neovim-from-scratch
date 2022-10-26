@@ -1,3 +1,4 @@
+local noopts = {}
 local opts = { noremap = true, silent = true }
 local opts_nosilent = { noremap = true, silent = false }
 
@@ -206,6 +207,29 @@ keymap("n", "<F6>", "<cmd>lua require'telescope.builtin'.lsp_document_symbols(re
 
 -- Git status fuzzy search
 keymap("n", "<F9>", "<cmd>lua require'telescope.builtin'.git_status(require('telescope.themes').get_dropdown({}))<cr>", opts)
+
+-- Comments - F5, <leader>ct
+keymap("n", "<F5>", "gcc", noopts)
+keymap("v", "<F5>", "gc", noopts)
+keymap("i", "<F5>", "<c-o>gcc", noopts)
+keymap("n", "<leader>ct", "gcc", noopts)
+keymap("v", "<leader>ct", "gc", noopts)
+-- Block Comments - C-F5, <leader>cb
+keymap("n", "<C-F5>", "gbc", noopts)
+keymap("v", "<C-F5>", "gb", noopts)
+keymap("i", "<C-F5>", "<c-o>gbc", noopts)
+keymap("n", "<leader>cb", "gbc", noopts)
+keymap("v", "<leader>cb", "gb", noopts)
+-- Yank & Comments - S-F5, <leader>cy
+-- XXX: normal mode version works onlt for one line, visual is designed for
+-- block comments
+keymap("n", "<S-F5>", "yygcc", noopts)
+keymap("v", "<S-F5>", "ygvgb", noopts)
+keymap("i", "<S-F5>", "<c-o>gbc", noopts)
+keymap("n", "<leader>cy", "yygcc", noopts)
+keymap("v", "<leader>cy", "ygvgb", noopts)
+
+
 -- }}}
 
 -- Terminal {{{

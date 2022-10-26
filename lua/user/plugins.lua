@@ -90,14 +90,20 @@ return packer.startup(function(use)
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
+    commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
+  }
+  --[[
+  use {
+    "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
   }
+  ]]
   use "p00f/nvim-ts-rainbow"
   --use "nvim-treesitter/playground"
 
   -- Comments
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context comments
+  --use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context comments
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

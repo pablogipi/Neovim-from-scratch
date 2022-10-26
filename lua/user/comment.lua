@@ -4,7 +4,9 @@ if not status_ok then
 end
 
 comment.setup {
-  pre_hook = function(ctx)
+  -- context comments are causing some issues. it is only needed to havascript
+  -- (.jsx), e dont use it roo much so lets disable this at the moment.
+  --[[ pre_hook = function(ctx)
     local U = require "Comment.utils"
 
     local location = nil
@@ -18,5 +20,5 @@ comment.setup {
       key = ctx.ctype == U.ctype.line and "__default" or "__multiline",
       location = location,
     }
-  end,
+  end, ]]
 }
