@@ -78,7 +78,6 @@ keymap("i", "<A-C-P>", "<c-o><cmd>lua require'telescope.builtin'.oldfiles(requir
 
 -- }}}
 
-
 -- Edit {{{
 -- Keymaps for editing operations
 
@@ -205,9 +204,8 @@ keymap("i", "<F3>", "<c-o><cmd>lua require'telescope.builtin'.buffers(require('t
 -- Current file symbols fuzzy search
 keymap("n", "<F6>", "<cmd>lua require'telescope.builtin'.lsp_document_symbols(require('telescope.themes').get_dropdown({}))<cr>", opts)
 
--- Git status fuzzy search
-keymap("n", "<F9>", "<cmd>lua require'telescope.builtin'.git_status(require('telescope.themes').get_dropdown({}))<cr>", opts)
 
+-- Comments {{{2
 -- Comments - F5, <leader>ct
 keymap("n", "<F5>", "gcc", noopts)
 keymap("v", "<F5>", "gc", noopts)
@@ -228,7 +226,18 @@ keymap("v", "<S-F5>", "ygvgb", noopts)
 keymap("i", "<S-F5>", "<c-o>gbc", noopts)
 keymap("n", "<leader>cy", "yygcc", noopts)
 keymap("v", "<leader>cy", "ygvgb", noopts)
+-- }}}
 
+-- GIT {{{2
+-- Git status fuzzy search
+keymap("n", "<F9>", "<cmd>lua require'telescope.builtin'.git_status(require('telescope.themes').get_dropdown({}))<cr>", opts)
+-- Implemented in user/gitsigns.lua
+-- Diff this - S-F9, <leader>hd
+-- Navigate Previous/Next hunk - []c 
+-- Preview hunk - <leader>hp
+-- Blame line - <leader>hb
+
+-- }}}
 
 -- }}}
 
