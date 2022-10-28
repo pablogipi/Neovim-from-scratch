@@ -14,6 +14,7 @@ require "user.treesitter"
 require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
+require "user.nvim-tree"
 
 
 -- Setup cmdheight to support several lines of messages but not force to do

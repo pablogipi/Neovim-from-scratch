@@ -54,7 +54,6 @@ return packer.startup(function(use)
   use 'tpope/vim-obsession' -- Manage sessions
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
-
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
@@ -128,6 +127,10 @@ return packer.startup(function(use)
 
   -- Git
   use "lewis6991/gitsigns.nvim"
+
+  -- Nvim Tree
+  use { "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" }
+  use { "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -153,8 +153,10 @@ keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Explorer - F8, <leader>e
-keymap("n", "<F8>", ":Lex 10<cr>", opts)
-keymap("n", "<leader>e", ":Lex 10<cr>", opts)
+-- keymap("n", "<F8>", ":Lex 10<cr>", opts)
+-- keymap("n", "<leader>e", ":Lex 10<cr>", opts)
+keymap("n", "<F8>", ":NvimTreeToggle<cr>", opts) -- Nvimtree
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- In Explorer - -
 keymap("n", "-", ":Explore<CR>", opts)
 
