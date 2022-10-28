@@ -239,6 +239,18 @@ keymap("n", "<F9>", "<cmd>lua require'telescope.builtin'.git_status(require('tel
 
 -- }}}
 
+-- LSP {{{2
+-- LSP keymaps Implemented in user/lsp/handlers.lua 
+-- Go to Declaration - gD
+-- Go to Definitio - gd
+-- Symbol help (hover) - K
+-- Show references - gr
+-- Show diagnostics - gl
+-- Navigate diagnostics = []k
+-- Send diagnostics to local list window - <leader>lq
+--
+-- }}}
+
 -- }}}
 
 -- Terminal {{{
