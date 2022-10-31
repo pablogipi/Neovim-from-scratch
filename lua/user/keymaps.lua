@@ -126,8 +126,8 @@ keymap("n", "<leader>qh", ":silent HelpAllClose<CR>", opts)
 keymap("v", "<leader>qh", ":silent HelpAllClose<CR>", opts)
 
 -- Close Window and Delete Buffer - <leader>x
-keymap("n", "<leader>x", ":bdelete<CR>", opts_nosilent)
-keymap("v", "<leader>x", ":bdelete<CR>", opts_nosilent)
+keymap("n", "<leader>x", ":Bdelete!<CR>", opts_nosilent)
+keymap("v", "<leader>x", ":Bdelete!<CR>", opts_nosilent)
 
 -- Vertical Split Window - <leader>s
 keymap("n", "<leader>s", "<C-w>v", opts)
@@ -171,12 +171,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<leader>=", "<C-w>=", opts)
 keymap("v", "<leader>=", "<C-w>=", opts)
 
--- Navigate buffers - []b
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<[b>", ":bnext<CR>", opts)
-keymap("n", "<]b>", ":bprevious<CR>", opts)
-
 -- Switch to Previous window
 keymap("n", "<leader>p", "<C-w>p", opts)
 -- Switch to Previous buffer - Ctrl-F3, <leader>TAB
@@ -185,6 +179,15 @@ keymap("v", "<C-F3>", ":e #<CR>", opts)
 keymap("i", "<C-F3>", "<c-o>:e #<CR>", opts)
 keymap("n", "<leader><TAB>", ":e #<CR>", opts)
 keymap("v", "<leader><TAB>", ":e #<CR>", opts)
+
+-- Navigate buffers - []b
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<[b>", ":bnext<CR>", opts)
+keymap("n", "<]b>", ":bprevious<CR>", opts)
+
+-- Pick buffer = gb
+keymap("n", "gb", ":BufferLinePick<CR>", opts)
 
 -- Navigate Buffers - F3, <leader>b
 -- keymap("n", "<F3>", ":buffer ", opts_nosilent)
