@@ -13,6 +13,15 @@ end
 
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
+local function toggle_replace()
+      local view = require"nvim-tree.view"
+      if view.is_visible() then
+        view.close()
+      else
+        require"nvim-tree".open_replacing_current_buffer()
+      end
+    end
+
 nvim_tree.setup {
     disable_netrw = true,
     hijack_netrw = true,
@@ -50,10 +59,10 @@ nvim_tree.setup {
     },
     view = {
         width = 30,
-        height = 30,
+        -- height = 30,
         hide_root_folder = false,
         side = "left",
-        auto_resize = true,
+        -- auto_resize = true,
         mappings = {
             custom_only = false,
             list = {
@@ -65,10 +74,10 @@ nvim_tree.setup {
         number = false,
         relativenumber = false,
     },
-    actions = {
+    --[[ actions = {
         quit_on_open = true,
         window_picker = { enable = true },
-    },
+    }, ]]
     renderer = {
         highlight_git = true,
         root_folder_modifier = ":t",

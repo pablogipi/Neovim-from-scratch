@@ -158,7 +158,8 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<F8>", ":NvimTreeToggle<cr>", opts) -- Nvimtree
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- In Explorer - -
-keymap("n", "-", ":Explore<CR>", opts)
+-- keymap("n", "-", ":Explore<CR>", opts)
+-- keymap("n", "-", "<cmd>lua require'user.nvim-tree'.toggle_replace()<CR>", opts)
 
 -- Resize with arrows - Ctrl[Up|Down|Left|Right]
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)

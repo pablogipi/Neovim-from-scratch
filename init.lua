@@ -3,6 +3,11 @@ local env = vim.env
 local cmd = vim.cmd
 local fn = vim.fn
 
+-- Disable netrw. Can affect other explorer plugins
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Load modules/plugins
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
