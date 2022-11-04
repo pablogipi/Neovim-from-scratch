@@ -210,6 +210,9 @@ keymap("i", "<F3>", "<c-o><cmd>lua require'telescope.builtin'.buffers(require('t
 -- Current file symbols fuzzy search
 keymap("n", "<F6>", "<cmd>lua require'telescope.builtin'.lsp_document_symbols(require('telescope.themes').get_dropdown({}))<cr>", opts)
 
+-- Format using LSP
+keymap("n", "<leader>f", ":Format<cr>", opts)
+
 
 -- Comments {{{2
 -- Comments - F5, <leader>ct
