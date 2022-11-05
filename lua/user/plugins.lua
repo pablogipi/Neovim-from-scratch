@@ -57,6 +57,7 @@ return packer.startup(function(use)
   -- Buffers
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
+  use 'nvim-lualine/lualine.nvim'
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -104,6 +105,8 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     commit = "0051870dd728f4988110a1b2d47f4a4510213e31"
   }
+
+  -- Null-ls
   use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
 
