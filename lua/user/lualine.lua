@@ -178,6 +178,7 @@ lualine.setup({
 	}, ]]
 	extensions = {
     'quickfix',
-    'nvim-tree'
+    'nvim-tree',
+    'toggleterm',
   },
 })

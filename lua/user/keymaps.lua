@@ -264,6 +264,8 @@ keymap("n", "<F9>", "<cmd>lua require'telescope.builtin'.git_status(require('tel
 
 -- Terminal {{{
 -- Operations usaully used when programing
+-- Defined in toggleterm.lua 
+-- Toggle Terminal - C-\
 
 
 
