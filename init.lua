@@ -22,6 +22,7 @@ require "user.gitsigns"
 require "user.nvim-tree"
 -- require "user.bufferline"
 require "user.lualine"
+require "user.toggleterm"
 
 
 -- Setup cmdheight to support several lines of messages but not force to do
