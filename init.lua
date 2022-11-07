@@ -23,6 +23,8 @@ require "user.nvim-tree"
 -- require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
+-- require "user.project"
+require "user.impatient"
 
 
 -- Setup cmdheight to support several lines of messages but not force to do

@@ -53,6 +53,8 @@ return packer.startup(function(use)
   use 'vim-scripts/HelpClose' -- Close all Help windows
   use 'tpope/vim-obsession' -- Manage sessions
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use 'lewis6991/impatient.nvim'
+  use 'dstein64/vim-startuptime'
 
   -- Buffers
   -- use "akinsho/bufferline.nvim"
@@ -141,6 +143,9 @@ return packer.startup(function(use)
 
   -- Toggle Term
   use "akinsho/toggleterm.nvim"
+
+  -- Project
+  -- use "ahmedkhalf/project.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
