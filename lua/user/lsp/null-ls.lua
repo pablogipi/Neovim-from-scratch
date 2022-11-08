@@ -16,6 +16,6 @@ null_ls.setup {
     -- formatting.yapf,
     formatting.stylua,
     diagnostics.flake8, -- https://pypi.org/project/flake8-black/
-    diagnostics.vint, -- https://github.com/Vimjas/vint
+    -- diagnostics.vint, -- https://github.com/Vimjas/vint
   },
 }
