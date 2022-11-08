@@ -43,12 +43,14 @@ packer.init {
 -- Install your plugins here
 --
 return packer.startup(function(use)
-  -- My plugins here
+
+  -- Packages plugins {{{
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  -- Packages plugins }}}
 
-  -- Basic plugins
+  -- Basic plugins {{{
   use 'tpope/vim-unimpaired' -- All famous unimpaired :)
   use 'vim-scripts/HelpClose' -- Close all Help windows
   use 'tpope/vim-obsession' -- Manage sessions
@@ -56,18 +58,41 @@ return packer.startup(function(use)
   use 'lewis6991/impatient.nvim'
   use 'dstein64/vim-startuptime'
 
-  -- Buffers
+  -- Basic plugins }}}
+
+  -- UI {{{
+  --
+  -- Buffers {{{2
   -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
   use 'nvim-lualine/lualine.nvim'
+  -- }}}
+  
+  -- Telescope {{{2
+  use "nvim-telescope/telescope.nvim"
+  -- use 'nvim-telescope/telescope-media-files.nvim'
+  -- }}}
+  
+  -- Nvim Tree
+  use { "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" }
+  use { "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" }
 
-  -- Colorschemes
+  -- Toggle Term
+  use "akinsho/toggleterm.nvim"
+
+  -- UI }}}
+
+  -- Colorschemes {{{
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "ellisonleao/gruvbox.nvim"
   use "folke/tokyonight.nvim"
 
-  -- cmp plugins
+  -- Colorschemes }}}
+
+  -- Developmemt {{{
+  
+  -- cmp plugins {{{2
   --[[
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -83,12 +108,14 @@ return packer.startup(function(use)
   -- use { "saadparwaiz1/cmp_luasnip", commit = "a9de941bcbda508d0a45d28ae366bb3f08db2e36" } -- snippet completions
   use { "hrsh7th/cmp-nvim-lsp", commit = "affe808a5c56b71630f17aa7c38e15c59fd648a8" } -- LSP completions
   use { "hrsh7th/cmp-nvim-lua", commit = "d276254e7198ab7d00f117e88e223b4bd8c02d21" } -- Lua completions
+  -- }}}
 
-  -- snippets
+  -- snippets {{{2
   -- use "L3MON4D3/LuaSnip" --snippet engine
   -- use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  -- }}}
 
-  -- LSP
+  -- LSP {{{2
   --use "neovim/nvim-lspconfig" -- enable LSP
   use { "neovim/nvim-lspconfig", commit = "f11fdff7e8b5b415e5ef1837bdcdd37ea6764dda" } -- enable LSP
   --use "williamboman/nvim-lsp-installer" -- simple to use language server installer
@@ -107,16 +134,14 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     commit = "0051870dd728f4988110a1b2d47f4a4510213e31"
   }
+  -- }}}
 
-  -- Null-ls
+  -- Null-ls {{{2
   use { "jose-elias-alvarez/null-ls.nvim", commit = "c0c19f32b614b3921e17886c541c13a72748d450" } -- for formatters and linters
   use { "RRethy/vim-illuminate", commit = "a2e8476af3f3e993bb0d6477438aad3096512e42" }
+  --}}}
 
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  -- use 'nvim-telescope/telescope-media-files.nvim'
-
-  -- Treesitter
+  -- Treesitter {{{2
   use {
     "nvim-treesitter/nvim-treesitter",
     commit = "8e763332b7bf7b3a426fd8707b7f5aa85823a5ac",
@@ -127,25 +152,28 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   ]]
-  use "p00f/nvim-ts-rainbow"
-  --use "nvim-treesitter/playground"
+  -- }}}
 
-  -- Comments
+  -- Comments {{{2
   use "numToStr/Comment.nvim" -- Easily comment stuff
   --use 'JoosepAlviste/nvim-ts-context-commentstring' -- Context comments
+  --}}}
 
   -- Git
   use "lewis6991/gitsigns.nvim"
 
-  -- Nvim Tree
-  use { "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" }
-  use { "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" }
-
-  -- Toggle Term
-  use "akinsho/toggleterm.nvim"
-
   -- Project
   -- use "ahmedkhalf/project.nvim"
+
+  -- Indent Lines
+  use "lukas-reineke/indent-blankline.nvim"
+
+  use "p00f/nvim-ts-rainbow"
+  --use "nvim-treesitter/playground"
+
+  -- Developmemt }}}
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
@@ -153,3 +181,6 @@ return packer.startup(function(use)
     require("packer").sync()
   end
 end)
+
+
+-- vim: ts=2 ft=lua nowrap fdm=marker 

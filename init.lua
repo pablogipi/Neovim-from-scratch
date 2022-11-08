@@ -7,11 +7,10 @@ local fn = vim.fn
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- Load modules/plugins
+-- Load modules/plugins {{{
 require "user.options"
 require "user.keymaps"
 require "user.plugins"
---require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
 require "user.telescope"
@@ -20,12 +19,17 @@ require "user.autopairs"
 require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
--- require "user.bufferline"
 require "user.lualine"
 require "user.toggleterm"
--- require "user.project"
 require "user.impatient"
+require "user.indentline"
+-- }}}
 
+-- DEPRECATED: {{{
+--require "user.colorscheme"
+-- require "user.bufferline"
+-- require "user.project"
+-- }}}
 
 -- Setup cmdheight to support several lines of messages but not force to do
 -- a press ENTER
@@ -54,3 +58,5 @@ vim.notify("TDVim " .. env.TDVIMVERSION .. " loaded" .. overridemsg)
 
 -- Restore cmdheight
 opt.cmdheight=cmdheight
+
+-- vim: ts=2 ft=lua nowrap fdm=marker 
