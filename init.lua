@@ -23,13 +23,14 @@ require "user.lualine"
 require "user.toggleterm"
 require "user.impatient"
 require "user.indentline"
-require "user.alpha"
+require "user.startify"
 -- }}}
 
 -- DEPRECATED: {{{
 --require "user.colorscheme"
 -- require "user.bufferline"
 -- require "user.project"
+-- require "user.alpha"
 -- }}}
 
 -- Setup cmdheight to support several lines of messages but not force to do
