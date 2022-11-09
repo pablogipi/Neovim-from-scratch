@@ -1,6 +1,7 @@
 # General
 *~
 *.swp
+*.log
 tags
 Session.vim
 plugin/packer_compiled.lua
