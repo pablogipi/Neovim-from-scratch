@@ -80,6 +80,9 @@ return packer.startup(function(use)
   -- Toggle Term
   use "akinsho/toggleterm.nvim"
 
+  -- Start Screen
+  use 'goolord/alpha-nvim'
+
   -- UI }}}
 
   -- Colorschemes {{{
@@ -134,6 +137,7 @@ return packer.startup(function(use)
     "williamboman/mason-lspconfig.nvim",
     commit = "0051870dd728f4988110a1b2d47f4a4510213e31"
   }
+  use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   -- }}}
 
   -- Null-ls {{{2
