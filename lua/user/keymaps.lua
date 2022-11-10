@@ -45,6 +45,10 @@ keymap("n", "<S-F1>", "<cmd>lua require'telescope.builtin'.help_tags(require('te
 keymap("v", "<S-F1>", "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("x", "<S-F1>", "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("i", "<S-F1>", "<c-o><cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<C-F1>", "<cmd>call utils#ShowTDVimHelp()<CR>", opts)
+keymap("v", "<C-F1>", "<cmd>call utils#ShowTDVimHelp()<CR>", opts)
+keymap("x", "<C-F1>", "<cmd>call utils#ShowTDVimHelp()<CR>", opts)
+keymap("i", "<C-F1>", "<c-o><cmd>call utils#ShowTDVimHelp()<CR>", opts)
 
 -- }}}
 
@@ -156,7 +160,7 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- keymap("n", "<F8>", ":Lex 10<cr>", opts)
 -- keymap("n", "<leader>e", ":Lex 10<cr>", opts)
 keymap("n", "<F8>", ":NvimTreeToggle<cr>", opts) -- Nvimtree
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- In Explorer - -
 -- keymap("n", "-", ":Explore<CR>", opts)
 -- keymap("n", "-", "<cmd>lua require'user.nvim-tree'.toggle_replace()<CR>", opts)

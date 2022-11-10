@@ -14,9 +14,9 @@ local setup = {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
       motions = false, -- adds help for motions
-      text_objects = false, -- help for text objects triggered after entering an operator
+      text_objects= false, -- help for text objects triggered after entering an operator
       windows = true, -- default bindings on <c-w>
       nav = true, -- misc bindings to work with windows
       z = true, -- bindings for folds, spelling and others prefixed with z
@@ -47,7 +47,7 @@ local setup = {
     position = "bottom", -- bottom, top
     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0,
+    winblend = 1,
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -196,6 +196,64 @@ local vmappings = {
   ["/"] = { "<ESC><CMD>lua require(\"Comment.api\").toggle_linewise_op(vim.fn.visualmode())<CR>", "Comment" },
 }
 
+-- Test Function Keys mappings in whichkey
+ 
+local fopts = {
+  mode = "n", -- NORMAL mode
+  prefix = "",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = false, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+--[[ - <F1>:                help
+   - <Shift-F1>:       Help for word under the cursor
+   - <Ctrl-F1>:        Open shortcuts help
+   - <Ctrl-Shift-F1>:  Open Start Menu
+- <F2>:                Command line mode
+   - <Ctrl-F2>:        Search Command Line History
+   - <Shift-F2>:       Visual block selection
+   - <Ctrl-Shift-F2>:  Main LeaderF Commands
+- <F3>:                Open buffer
+   - <Ctrl-Shift-F3>:  Open Recent files
+   - <Shift-F3>:       Open Files
+   - <Ctrl-F3>:        Switch previous buffer
+- <F4>:                Grep word under cursor in all files in location
+   - <Ctrl-F4>:        Diff non saved file with latest version
+   - <Shift-F4>:       Navigate lines
+   - <Ctrl-Shift-F4>:  File History
+- <F5>:                Toggle line comment
+   - <Shift-F5>:       Yank and comment line
+   - <Ctrl-F5>:        Multi-line comment
+- <F6>:                Browse Functions
+   - <Ctrl-F6>:        Show tag for current word in Preview Window.
+   - <Shift-F6>:       Echo current function
+   - <Ctrl-Shift-F6>:  Tags Finder
+- <F7>:                Open Terminal
+   - <Shift-F7>:       LeaderF Search Commands Menu
+- <F8>:                Open file browser
+   - <Ctrl-F8>:        Enable/disable menu bar
+   - <Shift-F8>:       Tags Explorer
+   - <Ctrl-Shift-F8>:  Tasks list
+- <F9>:                Git Status
+   - <Ctrl-F9>:        Git Log
+   - <Shift-F9>:       Git Diff
+   - <Ctrl-Shift-F9>:  Git File Log
+- <F10>:               NOT USED
+- <F11>:               Build
+   - <Ctrl F11>:       Next Error
+   - <Shift F11>:      Prev Error
+   - <Ctrl-Shift F11>: Errors list
+- <F12>:               Build Tags ]]
+local fmappings = {
+  ["<S-F1>"] = { "<cmd>lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Search In Help" },
+  ["<C-F1>"] = { "<cmd>WhichKey<cr>", "WhichKey" },
+  ["<F2>"] = { ":", "Normal Mode" },
+  ["<F3>"] = { "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Buffers" },
+}
+--
+
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
+which_key.register(fmappings, fopts)
