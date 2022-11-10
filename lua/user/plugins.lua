@@ -46,7 +46,6 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- Have packer manage itself
 	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
-	-- Packages plugins }}}
 
 	-- Basic plugins {{{
 	use("tpope/vim-unimpaired") -- All famous unimpaired :)
@@ -55,6 +54,8 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("lewis6991/impatient.nvim")
 	use("dstein64/vim-startuptime")
+	use({ "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" }) -- Devicons, nvim version
+	use("ryanoasis/vim-devicons") -- Devicons, vim version for startify
 
 	-- Basic plugins }}}
 
@@ -72,7 +73,6 @@ return packer.startup(function(use)
 	-- }}}
 
 	-- Nvim Tree
-	use({ "kyazdani42/nvim-web-devicons", commit = "563f3635c2d8a7be7933b9e547f7c178ba0d4352" })
 	use({ "kyazdani42/nvim-tree.lua", commit = "7282f7de8aedf861fe0162a559fc2b214383c51c" })
 
 	-- Toggle Term
@@ -81,7 +81,9 @@ return packer.startup(function(use)
 	-- Start Screen
 	-- use 'goolord/alpha-nvim' -- alpha
 	use("mhinz/vim-startify") -- Startify
-	use("ryanoasis/vim-devicons") -- Devicons, vim version for startify
+
+  -- Which Key
+  use "folke/which-key.nvim"
 
 	-- UI }}}
 

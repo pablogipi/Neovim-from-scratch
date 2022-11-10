@@ -24,6 +24,7 @@ require "user.toggleterm"
 require "user.impatient"
 require "user.indentline"
 require "user.startify"
+require "user.whichkey"
 -- }}}
 
 -- DEPRECATED: {{{
