@@ -25,6 +25,7 @@ require "user.impatient"
 require "user.indentline"
 require "user.startify"
 require "user.whichkey"
+require "user.autocommands"
 -- }}}
 
 -- DEPRECATED: {{{
