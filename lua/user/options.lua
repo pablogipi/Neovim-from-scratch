@@ -204,7 +204,7 @@ set.foldnestmax = 3
 -- }}}
 
 -- Tabs label format:
--- set guitablabel=%{utils#GuiTabLabel()}
+vim.cmd "set guitablabel=%{utils#GuiTabLabel()}"
 
 -- Completion {{{
 -- Completion options

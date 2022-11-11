@@ -58,7 +58,7 @@ if res then
 end
 
 -- End with TDVim version
-vim.notify("TDVim " .. env.TDVIMVERSION .. " loaded" .. overridemsg)
+-- vim.notify("TDVim " .. env.TDVIMVERSION .. " loaded" .. overridemsg)
 
 -- Restore cmdheight
 opt.cmdheight=cmdheight

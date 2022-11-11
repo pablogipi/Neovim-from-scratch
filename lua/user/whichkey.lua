@@ -250,6 +250,8 @@ local fmappings = {
   ["<C-F1>"] = { "<cmd>WhichKey<cr>", "WhichKey" },
   ["<F2>"] = { ":", "Normal Mode" },
   ["<F3>"] = { "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "Buffers" },
+  ["<F6>"] = { "<cmd>lua require'telescope.builtin'.treesitter(require('telescope.themes').get_dropdown({}))<cr>", "Buffers" },
+  ["<C-F6>"] = { "<cmd>lua require'telescope.builtin'.diagnostics(require('telescope.themes').get_ivy({ bufnr=0 }))<cr>", "Buffers" },
 }
 --
 

@@ -212,7 +212,10 @@ keymap("i", "<F3>", "<c-o><cmd>lua require'telescope.builtin'.buffers(require('t
 -- Operations usaully used when programing
 --
 -- Current file symbols fuzzy search
-keymap("n", "<F6>", "<cmd>lua require'telescope.builtin'.lsp_document_symbols(require('telescope.themes').get_dropdown({}))<cr>", opts)
+-- keymap("n", "<F6>", "<cmd>lua require'telescope.builtin'.lsp_document_symbols(require('telescope.themes').get_dropdown({}))<cr>", opts)
+keymap("n", "<F6>", "<cmd>lua require'telescope.builtin'.treesitter(require('telescope.themes').get_dropdown({}))<cr>", opts)
+-- Current file diagnostics fuzzy search
+keymap("n", "<C-F6>", "<cmd>lua require'telescope.builtin'.diagnostics(require('telescope.themes').get_ivy({}))<cr>", opts)
 
 -- Format using LSP
 keymap("n", "<leader>f", ":Format<cr>", opts)

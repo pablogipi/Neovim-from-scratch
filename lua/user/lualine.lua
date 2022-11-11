@@ -124,9 +124,11 @@ end
 lualine.setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = "solarized_light",
+		-- theme = "tomorrow",
 		-- component_separators = { left = "", right = "" },
-		component_separators = { left = "", right = "" },
+    -- component_separators = { left = '', right = '' },
+		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		-- section_separators = { left = "", right = "" },
 		-- disabled_filetypes = { "dashboard", "NvimTree", "Outline", "startify", "NerdTree", "Prompt", "TelescopePrompt"  },
@@ -157,8 +159,8 @@ lualine.setup({
 		lualine_b = {},
 		lualine_c = {},
 		lualine_x = {},
-		lualine_y = {},
-		lualine_z = { "tabs" },
+		lualine_y = { 'tabs' },
+		lualine_z = { 'o:titlestring' },
 	},
 	--[[ winbar = {
 		lualine_a = {},
